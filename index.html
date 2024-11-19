@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  
+
+
+  <img class="logo" src="MOVIES! (1).svg" alt="img">
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Kino nomini kirit">
+    <select id="typeFilter">
+      <option value="all">All Types</option>
+      <option value="Action">Action</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Animation">Animation</option>
+      <option value="Drama">Drama</option>
+      <option value="Documentary">Documentary</option>
+    </select>
+    <select id="sortFilter">
+      <option value="default">Sort</option>
+      <option value="title-asc">A-Z</option>
+      <option value="title-desc">Z-A</option>
+      <option value="rating-asc">1-10</option>
+      <option value="rating-desc">10-1</option>
+      <option value="year-asc">2001-2018</option>
+      <option value="year-desc">2018-2001</option>
+    </select>
+    <button class="search-btn" id="searchMovies">Search</button>
+  </div>
+
+  <div id="cardsContainer" class="cards-container"></div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
