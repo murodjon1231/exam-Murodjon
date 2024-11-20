@@ -106,9 +106,9 @@ const movies = [
     "ytid": "KAQvmBSzHlI"
   },
   {
-    "Title": "Bright Lights: Starring Carrie Fisher and Debbie Reynolds",
+    "Title": "How to Train Your Dragon ",
     "fulltitle": "Bright Lights: Starring Carrie Fisher and Debbie Reynolds (2016)",
-    "movie_year": 2016,
+    "movie_year": 2025,
     "Categories": "Documentary",
     "summary": "Carrie Fisher and Debbie Reynolds star in a tender portrait of Hollywood royalty in all its eccentricity. From the red carpet to the back alleys behind it, the documentary is about the bonds of family love, which are beautifully bitter-sweet.",
     ImageURL: "1200x675mf.jpg (1).svg",
@@ -250,7 +250,7 @@ const movies = [
     "ytid": "83UoZcdX__Y"
   },
   {
-    "Title": "Menashe",
+    "Title": "Peter Rabbit",
     "fulltitle": "Menashe (2017)",
     "movie_year": 2017,
     "Categories": "Drama",
@@ -274,10 +274,10 @@ const searchMoviesBtn = document.getElementById("searchMovies");
 const typeFilter = document.getElementById("typeFilter");
 const sortFilter = document.getElementById("sortFilter");
 
-function renderMovies(movies) {
+function render(movies) {
   cardsContainer.innerHTML = "";
   if (movies.length === 0) {
-    cardsContainer.innerHTML = `<p style="text-align: center; color: red;">No movies found</p>`;
+    cardsContainer.innerHTML = `<p style="text-align: center; color: blue ; font-size: 2px;  ">Bunaqa Kino yoq</p>`;
     return;
   }
   movies.forEach((movie) => {
@@ -303,19 +303,19 @@ function searchMovies() {
   const filteredMovies = movies.filter((movie) =>
     movie.Title.toLowerCase().includes(query)
   );
-  renderMovies(filteredMovies);
+  render(filteredMovies);
 }
 
 
 function filterByType() {
   const selectedType = typeFilter.value;
   if (selectedType === "all") {
-    renderMovies(movies);
+    render(movies);
   } else {
     const filteredMovies = movies.filter((movie) =>
       movie.Categories.toLowerCase().includes(selectedType.toLowerCase())
     );
-    renderMovies(filteredMovies);
+    render(filteredMovies);
   }
 }
 
@@ -331,7 +331,7 @@ function sortMovies() {
   else if (sortOption === "year-asc") sortedMovies.sort((a, b) => a.movie_year - b.movie_year);
   else if (sortOption === "year-desc") sortedMovies.sort((a, b) => b.movie_year - a.movie_year);
 
-  renderMovies(sortedMovies);
+  render(sortedMovies);
 }
 
 searchMoviesBtn.addEventListener("click", searchMovies);
@@ -339,4 +339,4 @@ typeFilter.addEventListener("change", filterByType);
 sortFilter.addEventListener("change", sortMovies);
 
 
-renderMovies(movies);
+render(movies);
